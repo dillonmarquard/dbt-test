@@ -1,15 +1,15 @@
-Table example.movies {
+Table core.movies {
     id int [pk, note: 'a source table of movies']
     studio_id int
     title varchar(32)
     year int
 }
 
-Table example.studios {
+Table core.studios {
     id int [pk]
     name varchar(32)
 }
 
 Ref {
-    example.movies.studio_id > example.studios.id
+    core.movies.studio_id > core.studios.id
 }
