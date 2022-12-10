@@ -1,0 +1,27 @@
+
+version: 2
+
+models:
+  - name: movies
+    description: "a source table of movies"
+    columns:
+      - name: id
+        description: "PK of movie"
+        tests:
+          - unique
+          - not_null
+      - name: studio_id
+        description: "FK of studio"
+      - name: title
+      - name: year
+
+  - name: studios
+    description: "a source table of studios"
+    columns:
+      - name: id
+        description: "PK of studio"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: "name of studio"

@@ -24,7 +24,67 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+seeds:
+  jaffle_shop:
+    +enabled: true
+    +schema: seed_data
 
+    Movies:
+      +column_types:
+        id: int
+        studio_id: int
+        title: varchar(64)
+        year: int
+
+    Studios:
+      +column_types:
+        id: int
+        name: varchar(64)
+
+    Locations:
+      +column_types:
+        id: int
+        address: varchar(128)
+        info: varchar(128)
+    
+    Genres:
+      +column_types:
+        id: int
+        name: varchar(32)
+
+    Actors:
+      +column_types:
+        id: int
+        firstname: varchar(32)
+        lastname: varchar(32)
+        born: date
+        died: date
+
+    Directors:
+      +column_types:
+        id: int
+        firstname: varchar(32)
+        lastname: varchar(32)
+
+    MovieGenre:
+      +column_types:
+        movie_id: int
+        genre_id: int
+
+    MovieLocation:
+      +column_types:
+        movie_id: int
+        location_id: int
+
+    MovieActor:
+      +column_types: 
+        movie_id: int
+        actor_id: int
+
+    MovieDirector:
+      +column_types:
+        movie_id: int
+        director_id: int
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
@@ -34,5 +94,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   jaffle_shop:
     # Config indicated by + and applies to all files under models/example/
-    example:
+    core:
       +materialized: view
+      +schema: core

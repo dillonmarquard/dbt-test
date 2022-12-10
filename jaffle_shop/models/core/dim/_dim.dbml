@@ -1,0 +1,15 @@
+Table example.movies {
+    id int [pk, note: 'a source table of movies']
+    studio_id int
+    title varchar(32)
+    year int
+}
+
+Table example.studios {
+    id int [pk]
+    name varchar(32)
+}
+
+Ref {
+    example.movies.studio_id > example.studios.id
+}

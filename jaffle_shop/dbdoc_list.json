@@ -1,0 +1,10 @@
+[
+    [
+        "C:\\Users\\dmarq\\data\\data-engineer\\dbt-test\\jaffle_shop\\models\\core\\_core.dbml",
+        "core"
+    ]
+    [
+        "C:\\Users\\dmarq\\data\\data-engineer\\dbt-test\\jaffle_shop\\models\\core\\dim\\_dim.dbml",
+        "dim"
+    ]
+]
